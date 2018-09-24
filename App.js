@@ -3,6 +3,7 @@ import {View, Text, StyleSheet} from 'react-native'
 import Swiper from 'react-native-swiper'
 import InputScreen from './InputScreen'
 import LogScreen from './LogScreen'
+import StatScreen from './StatScreen'
 //import randomcolor from 'randomcolor'
 
 
@@ -61,7 +62,8 @@ class Home extends React.Component {
             <TitleText label="Top" />
           </View>
           <View style={this.viewStyle()}>
-            <TitleText label="Home" />
+            <StatScreen>
+            </StatScreen>
           </View>
           <View style={this.viewStyle()}>
             <TitleText label="Bottom" />

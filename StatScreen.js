@@ -7,7 +7,8 @@
  */
 
 import React, {Component} from 'react';
-import {FlatList, AsyncStorage, SegmentedControlIOS, TouchableWithoutFeedback, Keyboard, TouchableOpacity, TextInput, Alert, SafeAreaView, TouchableHighlight, Image, Platform, StyleSheet, Text, View, ScrollView} from 'react-native';
+import {AsyncStorage, SegmentedControlIOS, TouchableWithoutFeedback, Keyboard, TouchableOpacity, TextInput, Alert, SafeAreaView, TouchableHighlight, Image, Platform, StyleSheet, Text, View, ScrollView} from 'react-native';
+import {VictoryPie} from 'victory-native';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -18,7 +19,7 @@ const instructions = Platform.select({
 
 
 
-export default class LogScreen extends Component {
+export default class StatScreen extends Component {
 
   constructor(props) {
     super(props)
@@ -60,57 +61,30 @@ export default class LogScreen extends Component {
   render() {
 
 
-    const {log} = this.state;
     //let myData = this._getData()[0];
+    let data = [
+      {x: "working", y: 153},
+      {x: "browsing", y: 535},
+      {x: "playing", y:44}
+    ];
     
     return (
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
       <SafeAreaView style={styles.container}>
         <View style={{zIndex:2, flex: 1, alignSelf: 'stretch', flexDirection: 'column', justifyContent:'center'}}>
-          <Text>Log</Text>
+          <Text>Stats</Text>
         </View>
 
-        <FlatList
-          style = {{alignSelf: "stretch"}}
-          data = {log}
-          renderItem = {  ({item}) => 
-            <LogItem 
-              ts={item[0]}
-              tags={item[1]}
-              q= {item[2]}
-            >
-            </LogItem>
-          }
-          keyExtractor = { (item, index) => `listItem-${index}`}
-        >
-          
-        </FlatList>
+      
+      <VictoryPie
+        data = {data}
+        
+      >
+  
+      </VictoryPie>
+
       </SafeAreaView>
       </TouchableWithoutFeedback>
-    )
-  }
-}
-
-
-class LogItem extends Component {
-  render() {
-    let {ts, tags, q} = this.props;
-    let tagItems = [];
-    for (let [idx, tg] of tags.entries()) {
-      tagItems.push(<Text style={{flex:1}} key={ts+"_"+idx}> { tg } </Text>);
-console.log(tg);
-    }
-    return (
-      <View style={{flex:1, flexDirection:'row', justifyContent:'center', alignSelf: 'stretch', alignItems: 'center'}} >
-        <Text style ={{backgroundColor: 'lightgreen', flex:2}}> { ts } </Text>
-        <View style ={{backgroundColor: 'lightblue', flex:3}}>
-          <View style ={{flex:1, flexDirection:'row'}}>
-            {tagItems}
-          </View>
-        </View>
-        <Text style ={{backgroundColor: 'lightpink', flex:1}}> { q } </Text>
-        
-      </View>
     )
   }
 }
