@@ -1,0 +1,37 @@
+
+{/*
+      <SafeAreaView style={styles.container}>
+        <View style={{flex: 1, flexDirection: 'column', justifyContent:'center'}}>
+          <Text style={styles.welcome}>Welcome to React Native!</Text>
+          <BananaButton></BananaButton>
+          <Text style={styles.instructions}>To get started, edit App.js</Text>
+          <Text style={styles.instructions}>{instructions}</Text>
+        </View>
+
+        <View style={{flex: 1, alignSelf: 'stretch', flexDirection: 'column', justifyContent:'center'}}>
+          <View style={{flex: 1, flexDirection: 'row', backgroundColor: 'green', alignItems: 'center', justifyContent: 'space-between'}}>
+            <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
+            <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
+            <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
+          </View>
+          <View style={{flex: 1, flexDirection: 'row', backgroundColor: 'green', alignItems: 'center', justifyContent: 'space-between'}}>
+            <View style={{width: 60, height: 50, backgroundColor: 'powderblue'}} />
+            <View style={{width: 60, height: 50, backgroundColor: 'skyblue'}} />
+            <View style={{width: 60, height: 50, backgroundColor: 'steelblue'}} />
+          </View>
+          <View style={{flex: 1, flexDirection: 'row', backgroundColor: 'green', alignItems: 'center', justifyContent: 'space-between'}}>
+            <View style={{width: 70, height: 50, backgroundColor: 'powderblue'}} />
+            <View style={{width: 70, height: 50, backgroundColor: 'skyblue'}} />
+            <View style={{width: 70, height: 50, backgroundColor: 'steelblue'}} />
+          </View>
+          <ScrollView contentContainerStyle={{minimumZoomScale:1, maximumZoomScale:5, alignItems: 'stretch', justifyContent: 'space-between'}}>
+            <View style={{width: 90, height: 50, backgroundColor: 'powderblue'}} />
+          </ScrollView>
+          <View style={{flex: 1, flexDirection: 'row', backgroundColor: 'green', alignItems: 'center', justifyContent: 'space-between'}}>
+            <View style={{width: 40, height: 50, backgroundColor: 'powderblue'}} />
+            <View style={{width: 40, height: 50, backgroundColor: 'skyblue'}} />
+            <View style={{width: 40, height: 50, backgroundColor: 'steelblue'}} />
+          </View>
+        </View>
+      </SafeAreaView>
+*/}
