@@ -9,7 +9,6 @@
 import React, {Component} from 'react';
 import {AsyncStorage, SegmentedControlIOS, TouchableWithoutFeedback, Keyboard, TouchableOpacity, TextInput, Alert, SafeAreaView, TouchableHighlight, Image, Platform, StyleSheet, Text, View, ScrollView} from 'react-native';
 import Autocomplete from 'react-native-autocomplete-input';
-import Swiper from 'react-native-swiper'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -255,53 +254,13 @@ export default class InputScreen extends Component {
   }
 }
 
-class BananaButton extends Component {
-  _bigger() {
-    console.log(this.state);
-    this.setState( previousState => { return {height: previousState.height + 50}} );
-  }
-
-  _smaller() {
-    console.log(this.state);
-    this.setState( previousState => { return {height: previousState.height - 50}} );
-  }
-
-  constructor(props) {
-    super(props)
-    this.state = { height: 111 };
-  }
-
-  render() {
-    return (
-      <TouchableHighlight 
-        title="whatwhat" 
-        onLongPress={ this._bigger.bind(this) }
-        onPress= { this._smaller.bind(this) }
-      >
-        
-        <Bananas height={this.state.height}></Bananas>
-      </TouchableHighlight>
-    )
-  }
-}
-
-class Bananas extends Component {
-  render() {
-    let pic = {
-      uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
-    };
-    return (
-      <Image source={pic} style={{width: 193, height: this.props.height}}/>
-    );
-  }
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    alignSelf: 'stretch'
   },
   welcome: {
     fontSize: 20,

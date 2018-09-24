@@ -1,7 +1,8 @@
 import React from 'react'
 import {View, Text, StyleSheet} from 'react-native'
 import Swiper from 'react-native-swiper'
-import InputScreen from 'InputScreen'
+import InputScreen from './InputScreen'
+import LogScreen from './LogScreen'
 //import randomcolor from 'randomcolor'
 
 
@@ -34,6 +35,8 @@ class Home extends React.Component {
       backgroundColor: 'green',
       justifyContent: 'center',
       alignItems: 'center',
+      alignSelf: 'stretch',
+      width:'100%'
     }
   }
 
@@ -46,7 +49,8 @@ class Home extends React.Component {
         showsPagination={false}
         index={1}>
         <View style={this.viewStyle()}>
-            <TitleText label="xTop" />
+          <InputScreen>
+          </InputScreen>
         </View>
         <Swiper
           horizontal={false}
@@ -64,7 +68,8 @@ class Home extends React.Component {
           </View>
         </Swiper>        
         <View style={this.viewStyle()}>
-          <TitleText label="Right" />
+          <LogScreen>
+          </LogScreen>
         </View>
       </Swiper>
       
