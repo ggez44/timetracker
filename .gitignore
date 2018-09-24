@@ -1,6 +1,6 @@
 #
-ios/
-android/
+ios/build
+android/build
 
 # OSX
 #
